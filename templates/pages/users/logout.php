@@ -1,0 +1,17 @@
+<?php
+session_start();
+unset($_SESSION['password']);
+unset($_SESSION['immergencepassword']);
+unset($_SESSION['school_user_id']);
+unset($_SESSION['fname']);
+unset($_SESSION['lname']);
+unset($_SESSION['User_Type']);
+unset($_SESSION['school_staff_id']);
+unset($_SESSION['user_permissions']);
+$next=isset($_GET['next'])?'&next='.$_GET['next']:'';
+unset($_SESSION['message']);
+unset($_SESSION['student_login']);
+unset($_SESSION['permissions']);
+unset($_SESSION['student_login']);
+Redirect::to('index.php?page='.$crypt->encode("login").$next);
+?>
